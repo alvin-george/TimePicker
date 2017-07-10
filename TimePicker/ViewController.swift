@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UITimePickerControllerDataDelegate {
+
+
     
-    @IBOutlet weak var timePickerDelegate: UITextField!
+    @IBOutlet weak var timePickerTextfield: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
         
         textField.resignFirstResponder()
         
@@ -43,8 +44,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     {
         
         
-        let customPickerView = UIStoryboard(name: STORYBOARD_TYPE.MAIN.rawValue, bundle: nil).instantiateViewController(withIdentifier: "pickerViewController") as! PickerViewController
-        customPickerView.pickerViewItems = pickerViewItems
+        var  customPickerView:TimePickerController = self.storyboard?.instantiateViewController(withIdentifier: "timePickerController") as! TimePickerController
+        
+       // customPickerView.pickerViewItems = pickerViewItems
         customPickerView.currentViewController = currentViewControllerIdentifier!
         customPickerView.delegate =  self
         
@@ -52,14 +54,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.present(customPickerView, animated: true, completion: nil)
     }
     //Custom Delegates
-    func getPickerData(selectedIndex: Int, selectedItem: String?) {
+
+    func getTimePickerData(selectedIndex: Int, selectedItem: String?) {
         
         self.view.endEditing(true)
-        //selectedClass =  selectedItem
-        //searchClassTextField.text =  selectedClass
-        
+        self.timePickerTextfield.text =  selectedItem
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

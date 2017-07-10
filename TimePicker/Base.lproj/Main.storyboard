@@ -31,6 +31,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="qIX-e6-Out"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,7 +44,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="timePickerDelegate" destination="p1X-mn-PK2" id="Yga-aX-lVk"/>
+                        <outlet property="timePickerTextfield" destination="p1X-mn-PK2" id="8NB-WO-1bb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -133,7 +136,7 @@
                                             <!--2017-07-05 06:10:18 +0000-->
                                         </date>
                                         <connections>
-                                            <action selector="timePickerValueChanged:" destination="7pn-tM-YWK" eventType="valueChanged" id="Vx9-qq-yMm"/>
+                                            <action selector="timePickerValueChanged:" destination="7pn-tM-YWK" eventType="valueChanged" id="PTU-X4-ykq"/>
                                         </connections>
                                     </datePicker>
                                 </subviews>
@@ -162,9 +165,8 @@
                     <connections>
                         <outlet property="cancelButton" destination="tRC-WA-5Yj" id="28h-4i-ZEo"/>
                         <outlet property="doneButton" destination="Yrv-ep-ga5" id="OlT-jc-wab"/>
-                        <outlet property="pickerContainerView" destination="am1-fI-qcR" id="BE8-cK-41H"/>
+                        <outlet property="pickerContainerView" destination="am1-fI-qcR" id="qih-uG-ns8"/>
                         <outlet property="timePicker" destination="Sfa-xw-YcN" id="825-BN-goI"/>
-                        <outlet property="toolBarView" destination="Qww-4q-AXR" id="zpP-6d-gWL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJd-Hu-WUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
